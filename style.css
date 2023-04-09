@@ -1,0 +1,53 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans&display=swap');
+
+
+* {
+	font-family: 'Public Sans', sans-serif;
+
+}
+
+body , html {
+	margin: 0;
+}
+
+body {
+	background: url("https://i.pinimg.com/736x/4b/73/85/4b73854039ff96b1a58e56e4520f6e17.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+}
+
+#header {
+	text-align: center;
+	padding: 100px;
+	background-color: rgb(219, 198, 167, 80%);
+	background-clip: content-box;
+	border-radius: 110px;
+
+}
+
+#title {
+	margin-bottom: 5px;
+}
+
+.heading h5 {
+	margin-top: 5px;
+}
+
+#readyButton, #myInput {
+	padding: 5px;
+}
+
+#readyButton:hover {
+	cursor: pointer;
+}
+
+#outPic {
+	object-fit: cover;
+	aspect-ratio: 1/1;
+}
+
+
