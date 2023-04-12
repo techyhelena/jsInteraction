@@ -2,29 +2,33 @@ let heading = document.getElementById("header");
 let title = document.getElementById("title");
 let readyButton = document.getElementById("readyButton");
 let outputParagraph = document.getElementById("outputText");
-// let imgs = document.getElementById("outputPic").src;
+let imgs = document.getElementById("outputPic");
 var inputElement = document.getElementById("myInput");
 
 
 // list of array
 var foodItems = ["rice cracker", "haw flake", "white rabbit candy", "pocky", "dried fish", "yakult", "Hello Panda", "Yan Yan", "Choco Pie", "taiyaki"];
-// var imgItems = ["img/riceCracker.jpg", "img/hawflakes.jpg", "img/whiteRabbit.jpg", "img/pocky.jpg", "img/driedFish.jpg", "img/yanyan.jpg", "img/chocoPie.jpg", "img/taiyaki.jpg"];
+var imgItems = ["img/riceCracker.jpg", "img/hawflakes.jpg", "img/whiteRabbit.jpg", "img/pocky.jpg", "img/driedFish.jpg",  "img/yakult.jpg", "img/helloPanda.jpg", "img/yanyan.jpg", "img/chocoPie.png", "img/taiyaki.jpg"];
 var style = ["normal", "italic", "oblique"];
 
 readyButton.addEventListener("click", function() {
 	var currentInputText = inputElement.value; // storing user's input
-	generate(currentInputText);
-	restyle();
+		if(currentInputText) {
+		generate(currentInputText);
+		restyle();
+		} 
+		else {
+			outputParagraph.innerText = "Please enter a name."
+		}
 });
 
 function generate(incUserInput) {
 	var randomIndex = Math.floor(Math.random() * foodItems.length); // getting a random number from index 1-10
 	var selectedRandomText= foodItems[randomIndex]; // retrieving the random element picked
-	// var selectedImg = imgItems[randomIndex]; // retrieving img from the specific index
+	var selectedImg = imgItems[randomIndex]; // retrieving img from the specific index
 	outputParagraph.innerText = incUserInput + ", you are a " + selectedRandomText + "!";
-	// imgs = document.getElementById(selectedImg).src;
-	// console.log(selectedImg);
-
+	// changing directory for images
+	imgs.src = selectedImg;
 }
 
 function restyle() {
